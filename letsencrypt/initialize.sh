@@ -17,7 +17,7 @@ function initialize_bigip {
 	tmsh create net dns-resolver ldns-resolver route-domain 0 forward-zones replace-all-with { . { nameservers replace-all-with { ${DNS1}:53 ${DNS2}:53 } } }
 	
 	#configure sys::DNS::nameservers
-	tmsh modify sys dns name-servers replace-all-with { ${DNS1} ${DNS2} }
+#	tmsh modify sys dns name-servers replace-all-with { ${DNS1} ${DNS2} }
 	
 	#create internal datagroup
 	tmsh create ltm data-group internal acme_responses type string
